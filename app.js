@@ -12,6 +12,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/get-key', (req, res) => {
+  console.log(req.body.message)
   if (req.body.message === process.env.SECRET) {
     res.send({ key: process.env.KEY });
   } else {
